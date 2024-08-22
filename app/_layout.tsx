@@ -13,7 +13,9 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    NohemiRegular: require('../assets/fonts/Nohemi-Regular.otf'),
+    NohemiSemiBold: require('../assets/fonts/Nohemi-SemiBold.otf'),
+    NohemiBlack: require('../assets/fonts/Nohemi-Black.otf'),
   });
 
   useEffect(() => {
@@ -29,7 +31,6 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>
     </ThemeProvider>
