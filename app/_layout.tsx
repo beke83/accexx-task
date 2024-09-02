@@ -16,6 +16,11 @@ export default function RootLayout() {
     NohemiRegular: require('../assets/fonts/Nohemi-Regular.otf'),
     NohemiSemiBold: require('../assets/fonts/Nohemi-SemiBold.otf'),
     NohemiBlack: require('../assets/fonts/Nohemi-Black.otf'),
+    NohemiBold: require('../assets/fonts/Nohemi-Bold.otf'),
+    InterRegular: require('../assets/fonts/Inter-Regular.ttf'),
+    InterMedium: require('../assets/fonts/Inter-Medium.ttf'),
+    InterBold: require('../assets/fonts/Inter-Bold.ttf'),
+    InterSemiBold: require('../assets/fonts/Inter-SemiBold.ttf'),
   });
 
   useEffect(() => {
@@ -31,6 +36,7 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
+        <Stack.Screen name="index" />
         <Stack.Screen name="+not-found" />
       </Stack>
     </ThemeProvider>

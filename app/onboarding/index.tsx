@@ -1,10 +1,11 @@
-import { useNavigation } from 'expo-router'
+import { useNavigation, useRouter } from 'expo-router'
 import React, { useEffect, useState } from 'react'
 import { Image, Pressable, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
 export default function OnboardingScreen() {
     const navigation = useNavigation();
+    const router = useRouter();
     const [currentStep, setCurrentStep] = useState(0)
 
     useEffect(() => {
@@ -31,8 +32,9 @@ export default function OnboardingScreen() {
         if (currentStep === 2) {
             const step = 0
             setCurrentStep(step);
+            router.push('/home')
         }
-        else{
+        else {
             const step = currentStep + 1;
             setCurrentStep(step);
         }
@@ -40,7 +42,7 @@ export default function OnboardingScreen() {
 
     return (
         <SafeAreaView style={styles.container}>
-            <ScrollView style={{ marginBottom: 30 }}>
+            <ScrollView style={{ marginBottom: 25 }}>
                 <StatusBar style='light' />
                 {currentStep === 0 && (
                     <View>
@@ -93,7 +95,7 @@ export default function OnboardingScreen() {
                     <Pressable style={styles.button} onPress={goForward}>
                         <Text style={{ color: 'white', fontFamily: 'NohemiRegular' }}>Next</Text>
                     </Pressable>
-                    <Text style={{ textAlign: 'center', fontFamily: 'NohemiSemiBold', color: '#FF8C61', marginTop: 20 }}>Skip</Text>
+                    <Text onPress={() => router.push('/home')} style={{ textAlign: 'center', fontFamily: 'NohemiSemiBold', color: '#FF8C61', marginTop: 20 }}>Skip</Text>
                 </View>
             </ScrollView>
         </SafeAreaView>
@@ -102,10 +104,14 @@ export default function OnboardingScreen() {
 
 const styles = StyleSheet.create({
     container: {
+        display: 'flex',
+        flex: 1,
         backgroundColor: 'white',
     },
     onboardingImage: {
         maxHeight: 390,
+        width: '100%',
+        objectFit: 'cover',
     },
     titleContainer: {
         display: 'flex',
