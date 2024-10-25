@@ -17,10 +17,11 @@ export default function Login() {
     }
 
     return (
-        <KeyboardAwareScrollView style={styles.container}>
-            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-                <ScrollView>
-                    <SafeAreaView>
+        <View style={styles.container}>
+            <KeyboardAwareScrollView >
+                <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+                    <ScrollView>
+
                         <Image
                             source={require('@/assets/images/accexx-logo.png')}
                             alt="accexx logo"
@@ -47,7 +48,7 @@ export default function Login() {
                         </View>
 
                         <View style={styles.btnContainer}>
-                            <Pressable style={styles.button} onPress={() => router.push('/onboarding')}>
+                            <Pressable style={styles.button} onPress={() => router.push('/home')}>
                                 <Text style={{ color: 'white', fontFamily: 'NohemiRegular' }}>Login</Text>
                             </Pressable>
                             <Text style={[styles.account, { fontFamily: 'InterBold' }]}>Don’t have an account?{" "}
@@ -58,17 +59,17 @@ export default function Login() {
                                 </Link>
                             </Text>
                         </View>
-                    </SafeAreaView>
-                </ScrollView>
-            </TouchableWithoutFeedback>
-        </KeyboardAwareScrollView>
+                    </ScrollView>
+                </TouchableWithoutFeedback>
+            </KeyboardAwareScrollView>
+        </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: 40,
+        paddingTop: 60,
         paddingLeft: 16,
         paddingRight: 16,
         backgroundColor: '#ffffff',

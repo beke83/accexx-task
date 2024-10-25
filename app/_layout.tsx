@@ -32,11 +32,13 @@ export default function RootLayout() {
   if (!loaded) {
     return null;
   }
-
+  // value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <ThemeProvider value={colorScheme === 'dark' ? DefaultTheme : DefaultTheme}>
       <Stack>
         <Stack.Screen name="index" />
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="/location" />
         <Stack.Screen name="+not-found" />
       </Stack>
     </ThemeProvider>

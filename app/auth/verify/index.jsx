@@ -28,7 +28,7 @@ export default function Verify() {
         <KeyboardAwareScrollView style={styles.container}>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <ScrollView>
-                    <SafeAreaView>
+                    <View>
                         <Link href='/auth/login'>
                             <View>
                                 <Image
@@ -66,7 +66,7 @@ export default function Verify() {
                                 <Text style={{ color: 'white', fontFamily: 'NohemiRegular' }}>Continue</Text>
                             </Pressable>
                         </View>
-                    </SafeAreaView>
+                    </View>
                 </ScrollView>
             </TouchableWithoutFeedback>
         </KeyboardAwareScrollView>

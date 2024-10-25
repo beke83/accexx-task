@@ -55,6 +55,46 @@ export const locations = [
         imgUrl: '../assets/images/rivella.png',
         typeof: 'all'
     },
+    {
+        name: 'Rivella',
+        subName: '',
+        address: 'Plot 55 Agip Road, Rivers State',
+        type: 'Estate',
+        imgUrl: '../assets/images/rivella.png',
+        typeof: 'all'
+    },
+    {
+        name: 'Rivella',
+        subName: '',
+        address: 'Plot 55 Agip Road, Rivers State',
+        type: 'Estate',
+        imgUrl: '../assets/images/rivella.png',
+        typeof: 'all'
+    },
+    {
+        name: 'Rivella',
+        subName: '',
+        address: 'Plot 55 Agip Road, Rivers State',
+        type: 'Estate',
+        imgUrl: '../assets/images/rivella.png',
+        typeof: 'all'
+    },
+    {
+        name: 'Rivella',
+        subName: '',
+        address: 'Plot 55 Agip Road, Rivers State',
+        type: 'Estate',
+        imgUrl: '../assets/images/rivella.png',
+        typeof: 'all'
+    },
+    {
+        name: 'Rivella',
+        subName: '',
+        address: 'Plot 55 Agip Road, Rivers State',
+        type: 'Estate',
+        imgUrl: '../assets/images/rivella.png',
+        typeof: 'all'
+    },
 ]
 
 export const invitations = [
@@ -107,7 +147,52 @@ export const invitations = [
         time: '11:24 am',
         typeof: 'yesterday'
     },
-   
+
+]
+
+export const recentVisits = [
+    {
+        date: '20 March 2023',
+        visits: [
+            {
+                name: 'Ayomide Olatunji',
+                time: '9:00 am'
+            },
+            {
+                name: 'George Jite',
+                time: '10:00 am'
+            },
+            {
+                name: 'Patrick Ndubuisi',
+                time: '9:50 am'
+            },
+            {
+                name: 'Babatunde Joseph',
+                time: '9:00 am'
+            },
+        ]
+    },
+    {
+        date: '23 March 2023',
+        visits: [
+            {
+                name: 'Babatunde Joseph',
+                time: '9:00 am'
+            },
+            {
+                name: 'Ayomide Olatunji',
+                time: '9:00 am'
+            },
+            {
+                name: 'Patrick Ndubuisi',
+                time: '9:50 am'
+            },
+            {
+                name: 'George Jite',
+                time: '10:00 am'
+            },
+        ]
+    },
 ]
 
 export const members = []

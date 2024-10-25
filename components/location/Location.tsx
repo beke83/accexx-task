@@ -1,12 +1,13 @@
 import { locations } from '@/constants/data';
-import { Link } from 'expo-router';
+import { Link, router } from 'expo-router';
 import React from 'react'
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { Dimensions, Image, ScrollView, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native'
 import CreateGroup from '../group/CreateGroup';
 
 const Location = () => {
+    const { height: screenHeight } = Dimensions.get('window');
     return (
-        <View>
+        <>
             {locations.length === 0 ? (
                 <>
                     <View style={[styles.bottom_body, styles.center]}>
@@ -25,31 +26,33 @@ const Location = () => {
                 </>
             ) : (
                 <View>
-                    <ScrollView showsVerticalScrollIndicator={false}>
+                    <>
                         <View>
                             <Text style={{ fontSize: 12, fontWeight: 500, fontFamily: 'InterRegular', color: '#808080', marginTop: 10 }}>Pinned</Text>
                         </View>
                         {locations.filter((location) => location.typeof === 'pinned').map((item, index) => (
-                            <View key={index} style={styles.locationContainer}>
-                                <View>
-                                    {item.imgUrl === '' ? (
-                                        <View style={{ backgroundColor: '#E4E9FF', width: 38, height: 38, borderRadius: 99, alignItems: 'center', justifyContent: 'center' }}>
-                                            <Text style={{ color: '#4A6DFF', fontWeight: '700' }}>{item.name[0]}{item.subName[0]}</Text>
-                                        </View>
-                                    ) : (
-                                        <Image
-                                            source={require('../../assets/images/rivella.png')}
-                                        />
-                                    )}
+                            <TouchableWithoutFeedback onPress={() => router.push('/(tabs)')}>
+                                <View key={index} style={styles.locationContainer}>
+                                    <View>
+                                        {item.imgUrl === '' ? (
+                                            <View style={{ backgroundColor: '#E4E9FF', width: 38, height: 38, borderRadius: 99, alignItems: 'center', justifyContent: 'center' }}>
+                                                <Text style={{ color: '#4A6DFF', fontWeight: '700' }}>{item.name[0]}{item.subName[0]}</Text>
+                                            </View>
+                                        ) : (
+                                            <Image
+                                                source={require('../../assets/images/rivella.png')}
+                                            />
+                                        )}
+                                    </View>
+                                    <View style={[styles.locationHeader]}>
+                                        <Text style={[styles.name, { fontFamily: 'NohemiBold' }]}>{item.name}{" "} {item.subName}</Text>
+                                        <Text style={styles.address}>{item.address}</Text>
+                                    </View>
+                                    <View>
+                                        <Text style={[styles.address, { fontWeight: '700' }]}>{item.type}</Text>
+                                    </View>
                                 </View>
-                                <View style={[styles.locationHeader]}>
-                                    <Text style={[styles.name, { fontFamily: 'NohemiBold' }]}>{item.name}{" "} {item.subName}</Text>
-                                    <Text style={styles.address}>{item.address}</Text>
-                                </View>
-                                <View>
-                                    <Text style={[styles.address, { fontWeight: '700' }]}>{item.type}</Text>
-                                </View>
-                            </View>
+                            </TouchableWithoutFeedback>
                         ))}
                         <View>
                             <Text style={{ fontSize: 12, fontWeight: 500, fontFamily: 'InterRegular', color: '#808080', marginTop: 10 }}>All</Text>
@@ -76,18 +79,11 @@ const Location = () => {
                                 </View>
                             </View>
                         ))}
-                        <Link href='/location' style={{ alignSelf: 'flex-end', marginTop: 20, position: 'absolute', right: 20, bottom: 35 }}>
-                            <View>
-                                <Image
-                                    source={require('@/assets/images/add-group.png')}
-                                />
-                            </View>
-                        </Link>
-                    </ScrollView>
+                    </>
                 </View>
             )}
             {/* <CreateGroup /> */}
-        </View>
+        </>
     )
 }
 const styles = StyleSheet.create({
@@ -156,6 +152,12 @@ const styles = StyleSheet.create({
     address: {
         color: '#1B1B1B80',
         fontSize: 12,
+    },
+    addButton: {
+        position: 'absolute',
+        bottom: 0,
+        right: 20,
+        // height: Dimensions.get('screen').height - 50
     },
 });
 

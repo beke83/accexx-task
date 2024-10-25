@@ -24,7 +24,7 @@ export default function CreateAccount() {
         <KeyboardAwareScrollView style={styles.container}>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <ScrollView>
-                    <SafeAreaView>
+                    <View>
                         <Image
                             source={require('@/assets/images/accexx-logo.png')}
                             alt="accexx logo"
@@ -86,7 +86,7 @@ export default function CreateAccount() {
                                 </Link>
                             </Text>
                         </View>
-                    </SafeAreaView>
+                    </View>
                 </ScrollView>
             </TouchableWithoutFeedback>
         </KeyboardAwareScrollView>

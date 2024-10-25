@@ -10,12 +10,12 @@ export default function VerificationSuccess() {
         navigation.setOptions({ headerShown: false })
     }, [navigation]);
     return (
-        <SafeAreaView style={styles.container}>
+        <View style={styles.container}>
             <Text style={styles.successText}>You’ve successfully created an account. Proceed to login</Text>
             <Pressable style={styles.button} onPress={() => router.push('/home')}>
                 <Text style={{ color: 'white', fontFamily: 'NohemiRegular' }}>Go to Home</Text>
             </Pressable>
-        </SafeAreaView>
+        </View>
     )
 }
 

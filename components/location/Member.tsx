@@ -1,6 +1,6 @@
 import { invitations, locations, members } from '@/constants/data';
 import React from 'react'
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { Image, ScrollView, StyleSheet, Text, View, PanResponder } from 'react-native'
 
 const Member = () => {
     return (
