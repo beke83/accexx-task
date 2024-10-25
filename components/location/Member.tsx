@@ -15,11 +15,11 @@ const Member = () => {
                             <Text style={[styles.bottom_text, { fontFamily: 'InterMedium' }]}>You are not in any Membership now. Click on the button to create one.</Text>
                         </View>
                     </View>
-                    <View style={{ alignSelf: 'flex-end', marginTop: 20 }}>
+                    {/* <View style={{ alignSelf: 'flex-end', marginTop: 20 }}>
                         <Image
                             source={require('@/assets/images/add-group.png')}
                         />
-                    </View>
+                    </View> */}
                 </>
             ) : (
                 <View>

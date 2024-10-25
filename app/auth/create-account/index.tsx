@@ -21,7 +21,7 @@ export default function CreateAccount() {
     }
 
     return (
-        <KeyboardAwareScrollView style={styles.container}>
+        <KeyboardAwareScrollView  showsVerticalScrollIndicator={false} style={styles.container}>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <ScrollView>
                     <View>
@@ -96,7 +96,7 @@ export default function CreateAccount() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: 40,
+        paddingTop: 60,
         paddingLeft: 16,
         paddingRight: 16,
         backgroundColor: '#ffffff',

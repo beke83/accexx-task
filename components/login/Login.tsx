@@ -1,12 +1,14 @@
 import { Link, useNavigation, useRouter } from 'expo-router'
 import React, { useEffect, useState } from 'react'
-import { Image, Keyboard, KeyboardAvoidingView, Platform, Pressable, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableWithoutFeedback, View } from 'react-native';
+import { Image, Keyboard, KeyboardAvoidingView, Platform, Pressable, SafeAreaView, ScrollView, StatusBar, StatusBarStyle, StyleSheet, Text, TextInput, TouchableWithoutFeedback, View } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+
 
 export default function Login() {
     const navigation = useNavigation();
     const router = useRouter();
     const [showPassword, setShowPassword] = useState(true)
+    const [statusBarStyle, setStatusBarStyle] = useState<StatusBarStyle>('dark-content');
 
     useEffect(() => {
         navigation.setOptions({ headerShown: false })
@@ -18,9 +20,10 @@ export default function Login() {
 
     return (
         <View style={styles.container}>
-            <KeyboardAwareScrollView >
+            <KeyboardAwareScrollView showsVerticalScrollIndicator={false}>
+            <StatusBar barStyle={statusBarStyle} />
                 <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-                    <ScrollView>
+                    <ScrollView showsVerticalScrollIndicator={false}>
 
                         <Image
                             source={require('@/assets/images/accexx-logo.png')}

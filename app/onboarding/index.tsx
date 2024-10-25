@@ -43,7 +43,7 @@ export default function OnboardingScreen() {
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView style={{ marginBottom: 25 }}>
-                <StatusBar style='light' />
+                <StatusBar style='dark' />
                 {currentStep === 0 && (
                     <View>
                         <Image
